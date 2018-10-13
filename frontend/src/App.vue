@@ -1,43 +1,21 @@
 <template>
   <div id="app">
-
-    <section v-if="errored">
-      <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
-    </section>
-
-    <section v-else>
-      <div v-if="loading">Loading...</div>
-      <div
-      v-else
-      v-for="currency in info"
-      class="currency"
-      >
-      {{ currency.description }}:
-      <span class="lighten">
-        <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
-      </span>
+    <div id="navigation">
+      <router-link to="/search">Search Destination</router-link>
+      <router-link to="/carpark">Carpark</router-link>
+      <router-link to="/nearest">Nearest</router-link>
     </div>
-    </section>
-
-    <parking-map></parking-map>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ParkingMap from './components/ParkingMap'
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
-  components: {
-    ParkingMap
-  },
-  methods: {
-  },
   data () {
     return {
-      info: null,
-      loading: true,
-      errored: false
+      info: null
     }
   },
   filters: {
@@ -49,19 +27,32 @@ export default {
     axios
       .get('localhost:3000/carpark/all')
       .then(response => (this.info = response.data.bpi))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-.catch
   }
 }
 </script>
 
 <style>
+@import "./css/global.css";
+@import "../node_modules/leaflet/dist/leaflet.css";
+
 #app {
-  font-family: Helvetica, sans-serif;
+  /* font-family: Helvetica, sans-serif; */
   text-align: center;
+  /* color: white !important; */
+}
+
+#navigation a {
+  margin-right: 10px;
+}
+
+#full {
+  position: absolute;
+  overflow-x: auto;
+  top: 0;
+  right: 0;
+  left: 208px;
+  bottom: 0;
+  padding-left: 8px;
+  border-left: 1px solid #ccc;
 }
 </style>
