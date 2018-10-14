@@ -13,18 +13,16 @@
       </l-map>
     </div>
 
-    <!--
     <el-container>
       <el-header>Nearest Car Parks</el-header>
       <el-main>
         <el-collapse v-if="carparks && carparks.length" accordion>
-          <el-collapse-item v-for="(carpark, index) of carparks" :key="carpark.id"
+          <el-collapse-item v-for="carpark of carparks" :key="carpark.id"
             :title="carpark.name" :name="carpark.id">
           </el-collapse-item>
         </el-collapse>
       </el-main>
     </el-container>
-    -->
 
     <div class="list">
       <div class="list-heading">Nearest Car Parks</div>
