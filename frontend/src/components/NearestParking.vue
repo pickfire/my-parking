@@ -9,15 +9,14 @@
         <el-date-picker
             type="date"
             placeholder="Pick a date"
-            default-value=new Date().getDate()>
+            default-value="new Date().getDate()">
         </el-date-picker>
 
         <el-time-picker
             v-model="value1"
-            minTime=new Date().getTime()
-            placeholder="Choose a time">   
+            minTime="new Date().getTime()"
+            placeholder="Choose a time">
         </el-time-picker>
-
 
     </el-main>
     <el-footer>
@@ -31,7 +30,7 @@
 export default {
     data() {
         return {
-            time:  new Date().getTime(),
+            time: new Date().getTime(),
             value1: ''
         }
     }
@@ -40,6 +39,7 @@ export default {
 
 <style>
 @import "./../css/global.css";
+
 .head {
     margin-top: 20px;
 }

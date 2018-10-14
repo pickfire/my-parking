@@ -3,21 +3,23 @@
     <el-header>
     </el-header>
     <el-main class="content">  
-        <div><img src="frontend\src\assets\logo.png" alt=""></div>  
-        <div class="title">Hi, where're you heading to?</div>
-        <el-autocomplete
-        id="txtSearch"
-        v-model="destination"
-        clearable
-        prefix-icon="el-icon-search"
-        :fetch-suggestions="querySearch"
-        placeholder="Enter Destination"
-        :trigger-on-focus="false"
-        @select="handleSelect"
-        ></el-autocomplete>
+      <div><img src="frontend\src\assets\logo.png" alt=""></div>  
+      <div class="title">Hi, where're you heading to?</div>
+      <el-autocomplete
+           id="txtSearch"
+           v-model="destination"
+           clearable
+           prefix-icon="el-icon-search"
+           :fetch-suggestions="querySearch"
+           placeholder="Enter Destination"
+           :trigger-on-focus="false"
+           @select="handleSelect"
+           ></el-autocomplete>
     </el-main>
     <el-footer>
+      <router-link to="/carpark">
         <el-button style="float: right" icon="el-icon-check" circle type="primary"></el-button>
+      </router-link>
     </el-footer>
   </el-container>
 </template>
@@ -61,6 +63,13 @@ export default {
 
 <style>
 @import "./../css/global.css";
+.title {
+    font-size: 35px;-
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(88, 230, 175);
+}
+
 #txtSearch {
   width: 300px;
 }

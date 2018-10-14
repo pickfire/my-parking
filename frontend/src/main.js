@@ -4,6 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import locale from 'element-ui/lib/locale/lang/en'
+import Axios from 'axios'
 
 import ParkingMap from './components/ParkingMap'
 import SearchDestination from './components/SearchDestination'
@@ -18,6 +19,8 @@ const routes = [
 
 Vue.use(ElementUI, { locale })
 Vue.use(VueRouter)
+
+Vue.prototype.$http = Axios
 
 const router = new VueRouter({ routes })
 new Vue({ router, render: h => h(App) }).$mount('#app')

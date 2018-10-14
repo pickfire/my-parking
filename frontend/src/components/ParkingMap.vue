@@ -12,7 +12,20 @@
         </l-marker>
       </l-map>
     </div>
-    
+
+    <!--
+    <el-container>
+      <el-header>Nearest Car Parks</el-header>
+      <el-main>
+        <el-collapse v-if="carparks && carparks.length" accordion>
+          <el-collapse-item v-for="(carpark, index) of carparks" :key="carpark.id"
+            :title="carpark.name" :name="carpark.id">
+          </el-collapse-item>
+        </el-collapse>
+      </el-main>
+    </el-container>
+    -->
+
     <div class="list">
       <div class="list-heading">Nearest Car Parks</div>
       <div class="list-item">
@@ -50,6 +63,7 @@
 <script>
 import { LMap, LTileLayer, LMarker, LPopup } from "vue2-leaflet"
 import { carparkAll } from '../mocks/parking.js'
+import axios from 'axios'
 
 export default {
   name: "parking-map",
@@ -60,11 +74,11 @@ export default {
     LPopup
   },
   data() {
-    console.log(carparkAll)
     return {
       zoom: 15,
       markers: carparkAll,
       loc: L.latLng(3.0934, 101.6794),
+      carparks: []
     }
   },
   methods: {
@@ -76,6 +90,11 @@ export default {
         duration: 5000
       })
     }
+  },
+  created () {
+    this.$http.get('http://localhost:3000/carpark/nearest')
+      .then(res => this.carparks = res.data.body)
+      .catch(err => console.error(err))
   }
 }
 </script>

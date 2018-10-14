@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="navigation">
-      <router-link to="/search">Search Destination</router-link>
-      <router-link to="/carpark">Carpark</router-link>
-      <router-link to="/nearest">Nearest</router-link>
+      <router-link to="/search" replace>Search Destination</router-link>
+      <router-link to="/carpark" replace>Carpark</router-link>
+      <router-link to="/nearest" replace>Nearest</router-link>
     </div>
     <router-view></router-view>
   </div>

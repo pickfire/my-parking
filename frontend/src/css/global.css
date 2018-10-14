@@ -27,14 +27,6 @@ body {
     background-color: black;
 }
 
-.title {
-    height: 100% !important;
-    font-size: 35px; 
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: rgb(88, 230, 175);
-}
-
 /* .content {
     margin-inline-start: 40px; 
     margin-left: 40px;
