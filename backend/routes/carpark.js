@@ -69,8 +69,26 @@ router.get('/nearest', function (req, res, next) {
                 price = Math.min(price, carpark.parkingRate.max);
                 price = numberUtil.roundOff(price, 2);
             }
-            carpark["price"] = price;
+            carpark["price"] = numberUtil.formatFloat(price, 2, '??');
             carpark["priceRm"] = "RM " + numberUtil.formatFloat(price, 2);
+
+            //4. calculate status
+            let totalSlot = carpark.totalParkingLot;
+            let emptySlot = carpark.availableParkingLot;
+            let usedSlot = totalSlot - emptySlot;
+            let percentageUsed = numberUtil.roundOff(usedSlot/totalSlot, 2);
+            let availabilityStatus = "Available";
+            let availabilityLabel = "success";
+            if (percentageUsed > 0.95) {
+                availabilityStatus = "Full";
+                availabilityLabel = "danger";
+            }
+            else if (percentageUsed > 0.75) {
+                availabilityStatus = "Limited";
+                availabilityLabel = "warning";
+            }
+            carpark["availability"] = availabilityStatus;
+            carpark["availabilityColor"] = availabilityLabel;
 
             newList.push(carpark);
         }

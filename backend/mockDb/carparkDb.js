@@ -13,7 +13,7 @@ var carparkDb = [{
     lat: 3.161299,
     lng: 101.701799,
     totalParkingLot: 200,
-    availableParkingLot: 176,
+    availableParkingLot: 56,
     parkingRate: {
         flatRate: 0
     }
@@ -24,7 +24,7 @@ var carparkDb = [{
     lat: 3.156763, 
     lng: 101.702738,
     totalParkingLot: 300,
-    availableParkingLot: 102,
+    availableParkingLot: 4,
     parkingRate: {
         flatRate: 6
     }
@@ -34,8 +34,8 @@ var carparkDb = [{
     address: "Lorong Kamunting 2, Chow Kit, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
     lat: 3.156627, 
     lng: 101.700545,
-    totalParkingLot: 300,
-    availableParkingLot: 254,
+    totalParkingLot: 30,
+    availableParkingLot: 25,
     parkingRate: {
         firstHour: 2,
         nextHours: 3,
@@ -48,7 +48,7 @@ var carparkDb = [{
     lat: 3.160451,
     lng: 101.700565,
     totalParkingLot: 300,
-    availableParkingLot: 254,
+    availableParkingLot: 10,
     parkingRate: {
         firstHour: 2.5,
         nextHours: 1,
@@ -61,7 +61,7 @@ var carparkDb = [{
     lat: 3.156959,
     lng: 101.698000,
     totalParkingLot: 100,
-    availableParkingLot: 50,
+    availableParkingLot: 20,
     parkingRate: {
         firstHour: 0.5,
         nextHours: 0.5,

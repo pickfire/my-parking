@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div id="navigation">
-      <router-link to="/search" replace>Search Destination</router-link>
-      <router-link to="/carpark" replace>Carpark</router-link>
-      <router-link to="/nearest" replace>Nearest</router-link>
-    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -32,12 +27,14 @@ export default {
 </script>
 
 <style>
-@import "./css/global.css";
 @import "../node_modules/leaflet/dist/leaflet.css";
 
 #app {
-  /* font-family: Helvetica, sans-serif; */
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  /* overflow: hidden; */
   /* color: white !important; */
 }
 

@@ -1,34 +1,14 @@
-.mobile-container {
-    min-height: 800px;
-    max-height: 800px;
-    width: 420px; 
-    border: 1px solid; 
-    text-align: center;
-    margin: auto;
-    margin-top: 15px;
-    background-color: white;
-    color: black;
-    overflow: hidden;
-}
-
-.mobile-container a, 
-.mobile-container span {
-    color: black;
-}
-
-body a, 
-body span {
-    color: white;
+a > .el-button {
+  margin: 12px;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    color: white;
-    background-color: black;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* .content {
-    margin-inline-start: 40px; 
+    margin-inline-start: 40px;
     margin-left: 40px;
     margin-right: 40px;
 } */
